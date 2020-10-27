@@ -1,0 +1,160 @@
+// 文本溢出隐藏
+.f-line-1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space:nowrap;
+}
+
+.f-line-2 {
+  .f-line-1();
+  line-clamp: 2;
+}
+
+.f-line-2 {
+  .f-line-1();
+  line-clamp: 3;
+}
+
+// 定位
+.f-relative,
+.f-rela {
+	position: relative;
+}
+
+.f-absolute,
+.f-abso {
+	position: absolute;
+}
+
+.f-fixed {
+	position: fixed;
+}
+
+// 标题
+.f-page-title {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.f-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.f-sub-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+// 文本
+.f-info {
+  font-size: 12px;
+  color: #999;
+}
+
+// 文本对齐
+.f-text-left {
+  text-align: left;
+}
+
+.f-text-center {
+  text-align: center;
+}
+
+.f-text-right {
+  text-align: right;
+}
+
+// 布局
+.f-full {
+  width: 100%;
+  height: 100%;
+}
+
+.f-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-row-center {
+  .f-flex-row();
+  align-items: center;
+  justify-content: center;
+}
+
+.f-row-left {
+  .f-flex-row();
+  justify-content: flex-start;
+}
+
+.f-row-top {
+  .f-flex-row();
+  align-items: center;
+}
+
+.f-row-right {
+  .f-flex-row();
+  justify-content: flex-end;
+}
+
+.f-row-bottom {
+  .f-flex-row();
+  align-items: flex-end;
+}
+
+.f-row-between {
+  .f-flex-row();
+  justify-content: space-between;
+}
+
+.f-col-center {
+  .f-flex-col();
+  justify-content: center;
+  align-items: center;
+}
+
+.f-col-top {
+  .f-flex-col();
+  justify-content: flex-start;
+}
+
+.f-col-left {
+  .f-flex-col();
+  align-items: flex-start;
+}
+
+.f-col-bottom {
+  .f-flex-col();
+  justify-content: flex-end;
+}
+
+.f-col-right {
+  .f-flex-col();
+  align-items: flex-end;
+}
+
+.f-col-between {
+  .f-flex-col();
+  justify-content: space-between;
+}
+
+// 辅助
+.card-shadow {
+  box-shadow: 0 0 10px #ccc;
+}
+
+.round {
+  border-radius: 50%;
+}
