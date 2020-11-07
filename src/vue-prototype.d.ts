@@ -1,3 +1,4 @@
+
 import { Config } from '@/interface/index';
 
 interface ApiFunc {

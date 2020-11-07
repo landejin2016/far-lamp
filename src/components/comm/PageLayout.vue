@@ -194,5 +194,8 @@ export default class PageLayout extends PageLayoutProps {
         z-index: 9999;
       }
     }
+    .shadow{
+        position: static;
+    }
 }
 </style>

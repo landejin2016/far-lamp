@@ -59,7 +59,7 @@ $ npm run build
 - revert: 版本回滚
 
 scope：commit影响的范围，如pages、components等
-subject：commit描述
+    subject：commit描述
 
 body：提交的具体说明
 footer：备注

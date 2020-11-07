@@ -66,20 +66,20 @@ export default class Utils {
                 }
 
                 this.instance.post(this.apiConfig[url], params, { headers: { 'Access-Token': token } })
-                .then((res: Config): void => {
-                    if (res.data.code === 200) {
-                        resolve(res.data.data);
-                    } else {
-                        // 跳转登录，并传递当前路由;
-                        // if (res.code === 1011 || res.code === 1012 || res.code === 1013) {}
-                        reject(res.data);
-                    }
-                }).catch((err: Config): void => {
-                    reject({
-                        code: 10001,
-                        msg: '请求失败'
+                    .then((res: Config): void => {
+                        if (res.data.code === 200) {
+                            resolve(res.data.data);
+                        } else {
+                            // 跳转登录，并传递当前路由;
+                            // if (res.code === 1011 || res.code === 1012 || res.code === 1013) {}
+                            reject(res.data);
+                        }
+                    }).catch((err: Config): void => {
+                        reject({
+                            code: 10001,
+                            msg: '请求失败'
+                        });
                     });
-                });
             } else {
                 reject({
                     code: 10001,
@@ -106,7 +106,7 @@ export default class Utils {
         if (copyObj) {
             for (const key in obj) {
                 if (obj.hasOwnProperty(key)) {
-                   copyObj[key] = this.deepClone(obj[key]);
+                    copyObj[key] = this.deepClone(obj[key]);
                 }
             }
             return copyObj;
@@ -114,4 +114,42 @@ export default class Utils {
             return obj;
         }
     }
+
+    public formatDate(date: any, format: string): string {
+        if (!date.getTime && !(new Date(date).getTime)) {
+            return format;
+        }
+        let month = date.getMonth();
+        month += 1;
+        date = format.replace(/(YYYY|MM|mm|DD|dd|HH|hh|M|m|SS|ss)/g, ($): string => {
+            switch ($) {
+                case 'YYYY':
+                    return date.getFullYear();
+                case 'MM':
+                    return date.getMonth() >= 9 ? month : `0(${month})`;
+                case 'mm':
+                    return month;
+                case 'DD':
+                    return date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
+                case 'dd':
+                    return date.getDate();
+                case 'HH':
+                    return date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
+                case 'hh':
+                    return date.getHours();
+                case 'M':
+                    return date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`;
+                case 'm':
+                    return date.getMinutes();
+                case 'SS':
+                    return date.getSeconds() > 9 ? date.getSeconds() : `0${date.getSeconds()}`;
+                case 'ss':
+                    return date.getSeconds();
+                default:
+                    return $;
+            }
+        });
+        return date;
+    }
+
 }
