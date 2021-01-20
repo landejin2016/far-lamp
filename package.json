@@ -35,6 +35,7 @@
     "postcss-pxtorem": "^5.1.1",
     "style-resources-loader": "^1.3.3",
     "typescript": "~3.9.3",
+    "vconsole": "^3.4.0",
     "vue-cli-plugin-vant": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },

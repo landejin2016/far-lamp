@@ -11,6 +11,8 @@ import '@/assets/style/public.less';
 import '@/assets/style/reset.css';
 import '@/theme/icon.css';
 import '@/assets/style/animate.less';
+import VConsole from 'vconsole';
+const vConsole = new VConsole();
 
 Vue.config.productionTip = false;
 const utils = new Utils();

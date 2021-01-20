@@ -3,6 +3,8 @@ const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 
 module.exports = {
+    publicPath: "./",
+    assetsDir: "static",
     css: {
         loaderOptions: {
             less: {

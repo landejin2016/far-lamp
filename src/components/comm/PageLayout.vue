@@ -1,6 +1,6 @@
 <template>
     <section class='pages'>
-        <page-navbar v-if='showHeader' :title='title' :left-arrow='false' :border='border'>
+        <page-navbar v-if='showHeader' :title='title' :left-arrow='false' :border='border' :back="back">
             <div slot='left' @click='clickLeft'>
                 <slot name='left'>
                     <van-icon name='arrow-left' color='#999' v-if='leftArrow' />
@@ -15,7 +15,7 @@
         <div class='pages-content'>
             <slot></slot>
         </div>
-        <div v-if='tabbar'>
+        <div v-if='tabbar' class="tabbar">
             <van-tabbar route class='shadow'>
                 <van-tabbar-item replace to='/'>
                  <template #icon="props">
@@ -106,7 +106,8 @@ const PageLayoutProps = Vue.extend({
         type: Boolean,
         default: true,
     },
-    loading: Boolean
+    loading: Boolean,
+    back: Boolean
   }
 });
 
@@ -139,7 +140,7 @@ export default class PageLayout extends PageLayoutProps {
 
 <style lang='less' scoped>
 .pages {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -153,6 +154,10 @@ export default class PageLayout extends PageLayoutProps {
     &-content {
         flex: 1;
         overflow: auto;
+    }
+
+    .tabbar {
+        border-top: 1px solid #f1f1f1;
     }
 
     .tabber-box {
@@ -180,7 +185,7 @@ export default class PageLayout extends PageLayoutProps {
         left: 50%;
         margin-left: -30px;
         background: #ffffff;
-        z-index: 999999;
+        z-index: 99;
         transform-origin: center center;
       }
 
